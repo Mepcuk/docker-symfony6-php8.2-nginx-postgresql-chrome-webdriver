@@ -9,14 +9,15 @@ services:
       args:
         - PUID=${PUID}
         - PGID=${PGID}
-    environment:
+        - INSTALL_XDEBUG=${INSTALL_XDEBUG}
+    #environment:
       # IMPORTANT NOTE:
       # server name "Docker" should be set in PhpStorm Settings -> PHP -> Servers -> Name = Docker
       # Host => 127.0.0.1 Port => 888 Debugger => Xdebug
       # Add checked => Use path mapping
       # Add absolute path on server in project files => /var/www
       # Follow instruction picture in this catalog -> PhpStorm-XdebugSettings.png
-      PHP_IDE_CONFIG: "serverName=Docker"
+      #PHP_IDE_CONFIG: "serverName=Docker"
     volumes:
       - ./../:/var/www/
 
