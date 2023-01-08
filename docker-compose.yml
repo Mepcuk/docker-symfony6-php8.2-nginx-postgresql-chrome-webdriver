@@ -5,7 +5,7 @@ services:
     container_name: php-fpm
     build:
       context: ./../
-      dockerfile: ./docker/php-fpm/Dockerfile
+      dockerfile: ./docker-symfony6-php8.2-nginx-postgresql-chrome-webdriver/php-fpm/Dockerfile
       args:
         - PUID=${PUID}
         - PGID=${PGID}
