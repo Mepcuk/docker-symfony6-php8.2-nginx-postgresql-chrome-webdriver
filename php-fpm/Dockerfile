@@ -11,6 +11,9 @@ RUN if [ ${INSTALL_XDEBUG} = true ]; \
 
 COPY ./docker-symfony6-php8.2-nginx-postgresql-chrome-webdriver/php-fpm/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
+RUN apk add --no-cache libpq-dev && docker-php-ext-install pdo_pgsql
+
+#Configure non-root user
 ARG PUID=1000
 ARG PGID=1000
 
